@@ -28,14 +28,17 @@ const App = ( props ) => {
         <StrictMode>
             <div className="flex">
                 <Router>
+
                     <Sidebar />
+
                     <div className="w-4/5">
                         <Switch>
-                            <Route path="/Home">
+                            <Route exact path="/">
                                 <Home />
                             </Route>
                         </Switch>
                     </div>
+
                 </Router>
             </div>
         </StrictMode>

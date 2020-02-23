@@ -20,6 +20,7 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 // Components
 import Sidebar from './components/Sidebar'
 import Home    from './components/Home'
+import Contact from './components/Contact'
 
 
 const App = ( props ) => {
@@ -41,6 +42,9 @@ const App = ( props ) => {
                         <Switch>
                             <Route exact path="/">
                                 <Home />
+                            </Route>
+                            <Route path="/contact">
+                                <Contact />
                             </Route>
                         </Switch>
                     </div>

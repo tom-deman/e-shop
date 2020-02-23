@@ -1,6 +1,8 @@
 import React from 'react'
 
-import Grid from './Grid'
+import Grid       from './Grid'
+import Newsletter from './Newsletter'
+import Footer     from './Footer'
 
 
 const Home = () => {
@@ -19,7 +21,12 @@ const Home = () => {
                     </p>
                 </div>
             </div>
+
             <Grid />
+
+            <Newsletter />
+
+            <Footer />
         </div>
     )
 }

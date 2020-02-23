@@ -26,7 +26,10 @@ const App = ( props ) => {
 
     return (
         <StrictMode>
-            <div className="flex">
+            <div
+                className="flex"
+                id="main"
+            >
                 <Router>
 
                     <Sidebar />

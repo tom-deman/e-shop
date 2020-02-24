@@ -22,6 +22,7 @@ import Sidebar from './components/Sidebar'
 import Home    from './components/Home'
 import Contact from './components/Contact'
 import Shop    from './components/Shop'
+import Product from './components/Product'
 
 
 const App = ( props ) => {
@@ -49,6 +50,9 @@ const App = ( props ) => {
                             </Route>
                             <Route path="/shop">
                                 <Shop />
+                            </Route>
+                            <Route path="/product">
+                                <Product />
                             </Route>
                         </Switch>
                     </div>

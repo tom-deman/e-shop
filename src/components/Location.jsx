@@ -15,6 +15,7 @@ const Location = () => {
             </div>
 
             <City
+                myClass="w-1/4 city-1 text-center"
                 city="Brussels"
                 addressOne="94 Academy Street"
                 addressTwo="Barrington, London"
@@ -22,7 +23,8 @@ const Location = () => {
             />
 
             <City
-                city="Brussels"
+                myClass="w-1/4 city-2 text-center"
+                city="London"
                 addressOne="94 Academy Street"
                 addressTwo="Barrington, London"
                 phone="+123 456 789"

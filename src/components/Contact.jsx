@@ -1,6 +1,9 @@
 import React from 'react'
 
-import Location from './Location'
+import Location   from './Location'
+import Newsletter from './Newsletter'
+import Footer     from './Footer'
+import Social     from './Social'
 
 
 const Contact = () => {
@@ -13,6 +16,12 @@ const Contact = () => {
             </div>
 
             <Location />
+
+            <Social />
+
+            <Newsletter />
+
+            <Footer />
         </div>
     )
 }

@@ -14,10 +14,19 @@ const Location = () => {
                 />
             </div>
 
+            <City
+                city="Brussels"
+                addressOne="94 Academy Street"
+                addressTwo="Barrington, London"
+                phone="+123 456 789"
+            />
 
-            <City />
-
-            <City />
+            <City
+                city="Brussels"
+                addressOne="94 Academy Street"
+                addressTwo="Barrington, London"
+                phone="+123 456 789"
+            />
         </div>
     )
 }

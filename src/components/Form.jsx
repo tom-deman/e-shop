@@ -15,15 +15,17 @@ const Form = () => {
                                 className="w-full bg-transparent py-2 px-3 border border-gray-400"
                                 type="text"
                                 placeholder="Your full name"
+                                required
                             />
                         </div>
                     </div>
                     <div className="flex my-5">
                         <div className="w-1/2 pr-2">
                             <input
-                                type="text"
+                                type="email"
                                 className="w-full bg-transparent py-2 px-3 border border-gray-400"
                                 placeholder="Your Email"
+                                required
                             />
                         </div>
                         <div className="w-1/2 pl-2">
@@ -31,6 +33,7 @@ const Form = () => {
                                 type="text"
                                 className="w-full bg-transparent py-2 px-3 border border-gray-400"
                                 placeholder="Phone"
+                                required
                             />
                         </div>
                     </div>
@@ -40,8 +43,9 @@ const Form = () => {
                                 placeholder="Describe your project"
                                 className="bg-transparent w-full border border-gray-400 px-3 py-2"
                                 name="form-area"
-                                cols="30"
-                                rows="10">
+                                rows="7"
+                                required
+                            >
                             </textarea>
                         </div>
                     </div>

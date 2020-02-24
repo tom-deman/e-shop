@@ -4,6 +4,7 @@ import Location   from './Location'
 import Newsletter from './Newsletter'
 import Footer     from './Footer'
 import Social     from './Social'
+import Form       from './Form'
 
 
 const Contact = () => {
@@ -16,6 +17,8 @@ const Contact = () => {
             </div>
 
             <Location />
+
+            <Form />
 
             <Social />
 

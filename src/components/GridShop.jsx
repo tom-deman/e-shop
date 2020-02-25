@@ -7,32 +7,50 @@ import { BrowserRouter as
 
 
 const GridShop = () => {
+
+    const productsTab = [
+        {
+            left: 'product-1',
+            right: 'product-2'
+        },
+        {
+            left: 'product-3',
+            right: 'product-4'
+        },
+        {
+            left: 'product-5',
+            right: 'product-6'
+        },
+        {
+            left: 'product-7',
+            right: 'product-8'
+        },
+        {
+            left: 'product-9',
+            right: 'product-10'
+        },
+    ]
+
+
     return(
         <div>
-            <div className="flex">
-                <div className="w-1/2 shop-1">
-                    <Link to="/product">
-                        Link
+            { productsTab.map(( element, index ) => 
+                <div className="flex">
+                    <Link
+                        className="w-1/2"
+                        to={ element.left }
+                    >
+                        <div className={ element.left } />
+                    </Link>
+
+                    <Link
+                        className="w-1/2"
+                        to={ element.right }
+                    >
+                        <div className={ element.right } />
                     </Link>
                 </div>
-                <div className="w-1/2 shop-2"></div>
-            </div>
-            <div className="flex">
-                <div className="w-1/2 shop-3"></div>
-                <div className="w-1/2 shop-4"></div>
-            </div>
-            <div className="flex">
-                <div className="w-1/2 shop-5"></div>
-                <div className="w-1/2 shop-6"></div>
-            </div>
-            <div className="flex">
-                <div className="w-1/2 shop-7"></div>
-                <div className="w-1/2 shop-8"></div>
-            </div>
-            <div className="flex">
-                <div className="w-1/2 shop-9"></div>
-                <div className="w-1/2 shop-10"></div>
-            </div>
+            )}
         </div>
     )
 }

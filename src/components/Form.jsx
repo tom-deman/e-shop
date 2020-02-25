@@ -61,7 +61,7 @@ const Form = () => {
                     <div className="w-full text-center pb-16">
                         <button
                             type="submit"
-                            className="uppercase rounded-full py-3 px-5 button-form hover:bg-teal-400 text-white text-sm"
+                            className="uppercase rounded-full py-3 px-5 bg-teal-500 hover:bg-teal-400 text-white text-sm"
                         >
                             Send request
                         </button>

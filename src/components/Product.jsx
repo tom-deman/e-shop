@@ -1,10 +1,15 @@
 import React from 'react'
 
+import Details     from './Details'
+import Description from './Description'
+
 
 const Product = ( props ) => {
     return(
         <div>
-            { props.test }
+            <Details />
+
+            <Description />
         </div>
     )
 }

@@ -59,7 +59,7 @@ const ProductsRouter = () => {
             { productsTab.map(( element, index ) => 
                 <Route path={ element.path }>
                     <Product
-                        test={ element.text }
+
                     />
                 </Route>
             )}

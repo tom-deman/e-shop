@@ -11,13 +11,16 @@ const Social = () => {
         >
             <ul className="flex m-auto w-1/3 justify-around">
                 { socialTabs.map(( element, index ) => 
-                    <li key={ index }>
+                    <li
+                        key={ index }
+                        className=""
+                    >
                         <a
                             href={ element.href }
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <i className={ `${ element.icon } text-white mx-6 text-2xl` } />
+                            <i className={ `${ element.icon } text-white text-2xl m-2 text-sm` } />
                         </a>
                     </li>
                 )}

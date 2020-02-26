@@ -53,7 +53,7 @@ const Grid = () => {
                     <div className={ `${ element.class } flex items-end justify-center` }>
                         <Link to="/">
                             <p
-                                className="hidden font-medium uppercase text-sm tracking-wide pb-4"
+                                className="hidden font-medium uppercase text-sm tracking-wide pb-4 hover:text-white"
                                 onClick={ () => alert( 'hi' ) }
                             >
                                 add to cart

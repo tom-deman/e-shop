@@ -40,7 +40,16 @@ const GridShop = () => {
                         className="w-1/2"
                         to={ element.left }
                     >
-                        <div className={ element.left } />
+                        <div className={ `${ element.left } flex items-end justify-center` }>
+                            <Link to="/shop">
+                                <p
+                                    className="hidden font-medium uppercase text-sm tracking-wide pb-4"
+                                    onClick={ () => alert( 'hi' ) }
+                                >
+                                    add to cart
+                                </p>
+                            </Link>
+                        </div>
                     </Link>
 
                     <Link

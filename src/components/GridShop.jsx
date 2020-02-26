@@ -43,7 +43,7 @@ const GridShop = () => {
                         <div className={ `${ element.left } flex items-end justify-center` }>
                             <Link to="/shop">
                                 <p
-                                    className="hidden font-medium uppercase text-sm tracking-wide pb-4"
+                                    className="hidden font-medium uppercase text-sm tracking-wide pb-4 hover:text-gray-600"
                                     onClick={ () => alert( 'hi' ) }
                                 >
                                     add to cart
@@ -56,7 +56,16 @@ const GridShop = () => {
                         className="w-1/2"
                         to={ element.right }
                     >
-                        <div className={ element.right } />
+                        <div className={ `${ element.right } flex items-end justify-center` }>
+                            <Link to="/shop">
+                                <p
+                                    className="hidden font-medium uppercase text-sm tracking-wide pb-4 hover:text-gray-600"
+                                    onClick={ () => alert( 'hi' ) }
+                                >
+                                    add to cart
+                                </p>
+                            </Link>
+                        </div>
                     </Link>
                 </div>
             )}

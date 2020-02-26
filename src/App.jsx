@@ -1,7 +1,4 @@
-import React, {
-    StrictMode,
-    useState
-} from 'react'
+import React, { StrictMode } from 'react'
 
 // React router
 import { Switch } from 'react-router'
@@ -16,6 +13,7 @@ import { incrementCount } from './actions/action'
 
 // Other
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
+import '../node_modules/animate.css/animate.css'
 
 // Components
 import Sidebar        from './components/Sidebar'
@@ -26,46 +24,45 @@ import ProductsRouter from './components/ProductsRouter'
 import Cart           from './components/Cart'
 
 
-const App = ( props ) => {
+const App = () =>
+    <StrictMode>
+        <div
+            className="flex"
+            id="main"
+        >
+            <Router>
 
-    return (
-        <StrictMode>
-            <div
-                className="flex"
-                id="main"
-            >
-                <Router>
+                <Sidebar />
 
-                    <Sidebar />
+                <div
+                    className="w-4/5"
+                    id="right"
+                >
+                    <Switch>
+                        <Route exact path="/">
+                            <Home />
+                        </Route>
 
-                    <div
-                        className="w-4/5"
-                        id="right"
-                    >
-                        <Switch>
-                            <Route exact path="/">
-                                <Home />
-                            </Route>
-                            <Route path="/contact">
-                                <Contact />
-                            </Route>
-                            <Route path="/shop">
-                                <Shop />
-                            </Route>
-                            <Route path="/cart">
-                                <Cart />
-                            </Route>
+                        <Route path="/contact">
+                            <Contact />
+                        </Route>
 
-                            <ProductsRouter />
+                        <Route path="/shop">
+                            <Shop />
+                        </Route>
 
-                        </Switch>
-                    </div>
+                        <Route path="/cart">
+                            <Cart />
+                        </Route>
 
-                </Router>
-            </div>
-        </StrictMode>
-    )
-}
+                        <ProductsRouter />
+
+                    </Switch>
+                </div>
+
+            </Router>
+        </div>
+    </StrictMode>
 
 
 const mapStateToProps = ( state ) => {

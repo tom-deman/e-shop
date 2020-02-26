@@ -7,7 +7,7 @@ const Shop = () => {
     return(
         <div id="shop">
             <div className="shop-header flex items-center text-center">
-                <p className="text-white text-4xl font-bold m-auto">Shop Metro</p>
+                <p className="text-white text-4xl font-bold m-auto">Shop</p>
             </div>
 
             <GridShop />

@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="w-1/4 px-8">
                 <div className="text-white">
                     <p className="mb-8 font-bold text-lg">Headquarter</p>
-                    <p className="font-thin text-sm">Headquarter 9876 Design Blvd, Suite 543, Beverly Hills, CA 90212</p>
+                    <p className="font-thin text-sm">1890  Park Street, Oakland, Suite 205, CA 94612</p>
                 </div>
             </div>
             <div className="w-1/4 px-8">

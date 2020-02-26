@@ -1,9 +1,6 @@
-export const addProduct = ( a, b ) => {
-    return {
-        type   : 'ADD_PRODUCT',
-        payload: {
-            product: a,
-            price: b
-        }
+export const addItem = ( a ) => {
+    return {
+        type: 'ADD_ITEM',
+        payload: a
     }
 }

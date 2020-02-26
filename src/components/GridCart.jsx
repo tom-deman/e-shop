@@ -1,9 +1,9 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
 
-const GridCart = () => {
 
-    const testTabs = [ 'un', 'deux' ]
+const GridCart = ( props ) => {
 
     return(
         <div className="bg-white pt-32">
@@ -22,35 +22,43 @@ const GridCart = () => {
                     <p>Total</p>
                 </div>
             </div>
-            { testTabs.map(( element, index ) =>
-                <div className="flex mx-10 py-4 px-4 border-b border-r border-l h-40 border-gray-400">
-                    <div className="w-1/5 flex items-center">
-                        <button className="text-red-400 ">x</button>
-                        <div className="h-32 w-32 ml-8 product-cart-1"></div>
+            { props.cart.length === 1
+                ?
+                    <div className="flex mx-10 py-4 px-4 border-b border-r border-l h-24 justify-center items-center border-gray-400">
+                        <p className="">Your card is empty</p>
                     </div>
-                    <div className="w-1/5 flex items-center">
-                        <p>Kettle</p>
-                    </div>
-                    <div className="w-1/5 flex items-center">
-                        <p>€60</p>
-                    </div>
-                    <div className="w-1/5 flex items-center">
-                        <input
-                            type="number"
-                            className="w-24 h-12 border border-gray-300 shadow-sm text-center rounded-sm"
-                            defaultValue={ 1 }
-                        />
-                    </div>
-                    <div className="w-1/5 flex items-center">
-                        <p>€60</p>
-                    </div>
-                </div>
-            )}
+                :
+                    props.cart.map(( element, index ) =>
+                        index > 0 &&
+                            <div className="flex mx-10 py-4 px-4 border-b border-r border-l h-40 border-gray-400">
+                                <div className="w-1/5 flex items-center">
+                                    <button className="text-red-400 ">x</button>
+                                    <div className={ `h-24 w-24 ml-8 ${ element.miniImgProduct }` }></div>
+                                </div>
+                                <div className="w-1/5 flex items-center">
+                                    <p>{ element.name }</p>
+                                </div>
+                                <div className="w-1/5 flex items-center">
+                                    <p>{ `€${ element.price }` }</p>
+                                </div>
+                                <div className="w-1/5 flex items-center">
+                                    <input
+                                        type="number"
+                                        className="w-24 h-12 border border-gray-300 shadow-sm text-center rounded-sm"
+                                        defaultValue={ element.quantity }
+                                    />
+                                </div>
+                                <div className="w-1/5 flex items-center">
+                                    <p>{ `€${ element.total }` }</p>
+                                </div>
+                            </div>
+                    )
+            }
             <div className="mt-20 mx-10 pb-8">
                 <p className="font-medium mb-6">Cart Totals</p>
                 <div className="flex justify-between border border-gray-400 py-5 px-4">
                     <p className="pl-4 font-medium">Total</p>
-                    <p className="pr-4 font-semibold">€900</p>
+                    <p className="pr-4 font-semibold">{ `€${ props.price }` }</p>
                 </div>
             </div>
             <div className="flex justify-end px-10 pb-12">
@@ -63,4 +71,12 @@ const GridCart = () => {
 }
 
 
-export default GridCart
+const mapStateToProps = ( state ) => {
+    return {
+        cart: state.cart.cart,
+        price: state.price.price
+    }
+}
+
+
+export default connect( mapStateToProps )( GridCart )

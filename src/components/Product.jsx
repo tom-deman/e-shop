@@ -9,6 +9,7 @@ const Product = ( props ) => {
     return(
         <div id="product">
             <Details
+                miniImgProduct={ props.miniImgProduct }
                 imgProduct={ props.imgProduct }
                 price={ props.price }
                 name={ props.name }

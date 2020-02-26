@@ -2,11 +2,31 @@ import React, { useState } from 'react'
 
 import { socialTabs } from '../assets/js/sidebarsTabs.js'
 
-// Redux
-import { connect }        from 'react-redux'
-import { addProduct } from '../actions/action'
+import { connect } from 'react-redux'
+import { addItem } from '../actions/action'
+
 
 const Details = ( props ) => {
+    const [ quantity, setQuantity ] = useState( 1 )
+
+    const changeQuantity = ( element ) => {
+        setQuantity( Number( element.target.value ))
+    }
+
+    const addToCart = () => {
+        let product = {
+            name: props.name,
+            price: props.price,
+            imgProduct: props.imgProduct,
+            miniImgProduct: props.miniImgProduct,
+            quantity: quantity,
+            total: quantity * props.price
+        }
+        console.log( props.cart )
+        props.addItem( product )
+    }
+
+
     return(
         <div className="bg-white w-full p-12 flex">
             <div className="w-1/2 mt-4 p-5">
@@ -23,11 +43,12 @@ const Details = ( props ) => {
                     <input
                         type="number"
                         className="w-24 h-12 border border-gray-300 shadow-sm text-center rounded-sm"
-                        defaultValue={ 1 }
+                        value={ quantity }
+                        onChange={ ( event ) => changeQuantity( event ) }
                     />
                     <button
                         className="border border-gray-800 px-6 bg-gray-800 text-white uppercase ml-5 rounded-sm text-sm hover:text-black hover:bg-white"
-                        onClick={ () => props.addProduct( props.name, props.price ) }
+                        onClick={ () => addToCart() }
                     >
                         Add to cart
                     </button>
@@ -75,3 +96,16 @@ const Details = ( props ) => {
         </div>
     )
 }
+
+const mapStateToProps = ( state ) => {
+    return {
+        cart: state.cart.cart,
+    }
+}
+
+const mapActionToProps = {
+    addItem: addItem
+}
+
+
+export default connect( mapStateToProps, mapActionToProps )( Details )

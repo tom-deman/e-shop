@@ -18,11 +18,12 @@ import { incrementCount } from './actions/action'
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 
 // Components
-import Sidebar from './components/Sidebar'
-import Home    from './components/Home'
-import Contact from './components/Contact'
-import Shop    from './components/Shop'
+import Sidebar        from './components/Sidebar'
+import Home           from './components/Home'
+import Contact        from './components/Contact'
+import Shop           from './components/Shop'
 import ProductsRouter from './components/ProductsRouter'
+import Cart           from './components/Cart'
 
 
 const App = ( props ) => {
@@ -50,6 +51,9 @@ const App = ( props ) => {
                             </Route>
                             <Route path="/shop">
                                 <Shop />
+                            </Route>
+                            <Route path="/cart">
+                                <Cart />
                             </Route>
 
                             <ProductsRouter />

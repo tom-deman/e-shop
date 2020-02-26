@@ -25,7 +25,7 @@ const Sidebar = () => {
                             key={ index }
                             className="text-center"
                         >
-                            { index === 3
+                            { index === 4
                             ?
                                 <a
                                     href="https://tom-deman.github.io/portfolio/"
@@ -33,14 +33,14 @@ const Sidebar = () => {
                                     rel="noopener noreferrer"
                                     className="text-white hover:text-gray-500 text-sm m-1"
                                 >
-                                    { element.name }
+                                    { element }
                                 </a>
                             :
                                 <Link
                                     className="text-white hover:text-gray-500 text-sm m-1"
-                                    to={ index === 0 ? '/' : `/${ element.name.toLowerCase() }` }
+                                    to={ index === 0 ? '/' : `/${ element.toLowerCase() }` }
                                 >
-                                    { element.name }
+                                    { element }
                                 </Link>
                             }
                         </li>

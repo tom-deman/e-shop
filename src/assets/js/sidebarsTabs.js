@@ -1,17 +1,10 @@
 const navigationLinks = [
-        {
-            name: 'Home',
-        },
-        {
-            name: 'Shop'
-        },
-        {
-            name: 'Contact'
-        },
-        {
-            name: 'Portfolio'
-        }
-    ]
+    'Home',
+    'Shop',
+    'Contact',
+    'Cart',
+    'Portfolio'
+]
 
 const socialTabs = [
     {

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { socialTabs } from '../assets/js/sidebarsTabs.js'
 
+// Redux
+import { connect }        from 'react-redux'
+import { addProduct } from '../actions/action'
 
 const Details = ( props ) => {
     return(
@@ -12,7 +15,7 @@ const Details = ( props ) => {
 
             <div className="w-1/2 mt-4 px-8 py-2">
                 <p className="text-4xl font-semibold text-gray-800">{ props.name }</p>
-                <p className="text-3xl font-semibold text-gray-800">{ props.price }</p>
+                <p className="text-3xl font-semibold text-gray-800">{ `€${ props.price }` }</p>
                 <p className="text-sm text-gray-700 font-light tracking-tight mt-4">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ab labore nostrum, quidem dolor sed recusandae eaque reprehenderit, quis veniam maxime dolorum cumque facere tenetur assumenda, harum sit animi iusto beatae accusamus quisquam voluptatem rerum amet totam. Voluptate soluta, doloremque corporis beatae perferendis molestiae error vitae aut distinctio officia quod!
                 </p>
@@ -22,7 +25,10 @@ const Details = ( props ) => {
                         className="w-24 h-12 border border-gray-300 shadow-sm text-center rounded-sm"
                         defaultValue={ 1 }
                     />
-                    <button className="border border-gray-800 px-6 bg-gray-800 text-white uppercase ml-5 rounded-sm text-sm hover:text-black hover:bg-white">
+                    <button
+                        className="border border-gray-800 px-6 bg-gray-800 text-white uppercase ml-5 rounded-sm text-sm hover:text-black hover:bg-white"
+                        onClick={ () => props.addProduct( props.name, props.price ) }
+                    >
                         Add to cart
                     </button>
                 </div>
@@ -69,6 +75,3 @@ const Details = ( props ) => {
         </div>
     )
 }
-
-
-export default Details

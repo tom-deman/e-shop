@@ -1,6 +1,9 @@
-export const incrementCount = () => {
+export const addProduct = ( a, b ) => {
     return {
-        type   : 'INCREMENT_COUNT',
-        payload: 1
+        type   : 'ADD_PRODUCT',
+        payload: {
+            product: a,
+            price: b
+        }
     }
 }

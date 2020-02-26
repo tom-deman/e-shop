@@ -7,10 +7,6 @@ import { BrowserRouter as
     Route
 } from 'react-router-dom'
 
-// Redux
-import { connect }        from 'react-redux'
-import { incrementCount } from './actions/action'
-
 // Other
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 import '../node_modules/animate.css/animate.css'
@@ -65,15 +61,4 @@ const App = () =>
     </StrictMode>
 
 
-const mapStateToProps = ( state ) => {
-    return {
-        count: state.count.count
-    }
-}
-
-const mapActionToProps = {
-    incrementCount: incrementCount
-}
-
-
-export default connect( mapStateToProps, mapActionToProps )( App )
+export default App

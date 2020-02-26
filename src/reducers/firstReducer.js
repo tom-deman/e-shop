@@ -1,13 +1,16 @@
 let initialState = {
-    count: 0
+    cart: {
+        product: undefined,
+        price: undefined
+    }
 }
 
 export default function reducer( state = initialState, { type, payload }) {
     switch( type ) {
-        case 'INCREMENT_COUNT':
+        case 'ADD_PRODUCT':
             return state = {
                 ...state,
-                count: state.count += payload
+                count: state.cart += payload
             }
         default:
             return state

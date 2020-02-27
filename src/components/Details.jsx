@@ -10,7 +10,14 @@ const Details = ( props ) => {
     const [ quantity, setQuantity ] = useState( 1 )
 
     const changeQuantity = ( element ) => {
-        setQuantity( Number( element.target.value ))
+        const { min, max } = element.target
+        let { value } = element.target
+        value = Math.max(
+            Number( min ),
+            Math.min( Number( max ),
+            Number( value ))
+        )
+        setQuantity( value )
     }
 
     const addToCart = () => {
@@ -22,7 +29,6 @@ const Details = ( props ) => {
             quantity: quantity,
             total: quantity * props.price
         }
-        console.log( props.cart )
         props.addItem( product )
     }
 
@@ -43,8 +49,11 @@ const Details = ( props ) => {
                     <input
                         type="number"
                         className="w-24 h-12 border border-gray-300 shadow-sm text-center rounded-sm"
+                        min="1"
+                        max="5"
                         value={ quantity }
                         onChange={ ( event ) => changeQuantity( event ) }
+                        onKeyDown={ ( event ) => event.preventDefault() }
                     />
                     <button
                         className="border border-gray-800 px-6 bg-gray-800 text-white uppercase ml-5 rounded-sm text-sm hover:text-black hover:bg-white"

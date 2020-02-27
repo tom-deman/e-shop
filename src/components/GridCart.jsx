@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 
 const GridCart = ( props ) => {
-
     return(
         <div className="bg-white pt-32">
             <div className="flex px-4 py-4 mx-10 border border-gray-400">
@@ -32,8 +31,7 @@ const GridCart = ( props ) => {
                         index > 0 &&
                             <div className="flex mx-10 py-4 px-4 border-b border-r border-l h-40 border-gray-400">
                                 <div className="w-1/5 flex items-center">
-                                    <button className="text-red-400 ">x</button>
-                                    <div className={ `h-24 w-24 ml-8 ${ element.miniImgProduct }` }></div>
+                                    <div className={ `h-24 w-24 ml-8 ${ element.miniImgProduct }` } />
                                 </div>
                                 <div className="w-1/5 flex items-center">
                                     <p>{ element.name }</p>
@@ -42,11 +40,9 @@ const GridCart = ( props ) => {
                                     <p>{ `€${ element.price }` }</p>
                                 </div>
                                 <div className="w-1/5 flex items-center">
-                                    <input
-                                        type="number"
-                                        className="w-24 h-12 border border-gray-300 shadow-sm text-center rounded-sm"
-                                        defaultValue={ element.quantity }
-                                    />
+                                    <p className="ml-6">
+                                        { element.quantity }
+                                    </p>
                                 </div>
                                 <div className="w-1/5 flex items-center">
                                     <p>{ `€${ element.total }` }</p>

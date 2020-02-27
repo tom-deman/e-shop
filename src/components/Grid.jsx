@@ -88,7 +88,7 @@ const Grid = ( props ) => {
                     to={ element.path }
                     className={ element.width }
                 >
-                    <div className={ `${ element.class } flex items-end justify-center` }>
+                    <div className={ `${ element.class } flex items-end justify-center animated fadeIn delay-${ index }` }>
                         <Link to="/">
                             <p
                                 className="hidden font-medium uppercase text-sm tracking-wide pb-4 hover:text-gray-600"

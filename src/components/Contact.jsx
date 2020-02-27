@@ -11,7 +11,7 @@ const Contact = () => {
     return(
         <div id="contact">
             <div className="flex items-center justify-center contact-header">
-                <p className="uppercase text-6xl text-white font-bold text-center">
+                <p className="uppercase text-6xl text-white font-bold text-center animated fadeInUp">
                     Let's talk
                 </p>
             </div>

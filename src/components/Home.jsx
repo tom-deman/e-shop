@@ -1,4 +1,7 @@
-import React from 'react'
+import React, {
+    useState,
+    useEffect
+} from 'react'
 
 import { BrowserRouter as
     Route,
@@ -11,7 +14,20 @@ import Footer     from './Footer'
 
 
 const Home = () => {
-    let count = 1
+    const [count, setCount] = useState( false )
+
+    useEffect(() => {
+        const home = document.querySelector( '#home' )
+        home.addEventListener( 'scroll', () => {
+            const isActive = home.scrollTop > 750
+
+            isActive
+                ? setCount( true )
+                : setCount( false )
+        })
+    }, [])
+
+
     return(
         <div id="home">
             <div
@@ -30,7 +46,12 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className={ count > 0 ? 'h-4 w-4 bottom-0 mb-10 right-0 mr-10 fixed z-50' : 'hidden' }>
+            <div
+                className={ count
+                    ? 'h-4 w-4 bottom-0 mb-10 mr-12 right-0 fixed z-50 animated fadeIn'
+                    : 'hidden'
+                }
+            >
                 <a href='#header'>
                     <i class='fas fa-chevron-up text-white absolute hover:text-gray-400 p-3 to-top' />
                 </a>
@@ -44,5 +65,6 @@ const Home = () => {
         </div>
     )
 }
+
 
 export default Home

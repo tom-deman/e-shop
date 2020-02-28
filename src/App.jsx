@@ -13,14 +13,13 @@ import '../node_modules/animate.css/animate.css'
 
 // Components
 import Sidebar        from './components/Sidebar'
-import Home           from './components/Home'
-import Contact        from './components/Contact'
-import Shop           from './components/Shop'
 import ProductsRouter from './components/ProductsRouter'
-import Cart           from './components/Cart'
+
+// Tabs
+import { routerTabs } from './assets/js/routerTabs'
 
 
-const App = () =>
+const App = () => 
     <StrictMode>
         <div
             className="flex"
@@ -35,27 +34,19 @@ const App = () =>
                     id="right"
                 >
                     <Switch>
-                        <Route exact path="/">
-                            <Home />
-                        </Route>
-
-                        <Route path="/contact">
-                            <Contact />
-                        </Route>
-
-                        <Route path="/shop">
-                            <Shop />
-                        </Route>
-
-                        <Route path="/cart">
-                            <Cart />
-                        </Route>
+                        { routerTabs.map(( element, index ) => 
+                            <Route
+                                exact
+                                path={ element.path }
+                                component={ element.component }
+                                key={ index }
+                            />
+                        )}
 
                         <ProductsRouter />
 
                     </Switch>
                 </div>
-
             </Router>
         </div>
     </StrictMode>

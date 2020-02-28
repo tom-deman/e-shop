@@ -5,22 +5,19 @@ import Description   from './Description'
 import FooterProduct from './FooterProduct'
 
 
-const Product = ( props ) => {
-    return(
-        <div id="product">
-            <Details
-                miniImgProduct={ props.miniImgProduct }
-                imgProduct={ props.imgProduct }
-                price={ props.price }
-                name={ props.name }
-            />
+const Product = ( props ) => 
+    <div id="product">
+        <Details
+            miniImgProduct={ props.miniImgProduct }
+            imgProduct={ props.imgProduct }
+            price={ props.price }
+            name={ props.name }
+        />
 
-            <Description />
+        <Description />
 
-            <FooterProduct />
-        </div>
-    )
-}
+        <FooterProduct />
+    </div>
 
 
 export default Product

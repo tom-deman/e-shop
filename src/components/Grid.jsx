@@ -7,6 +7,7 @@ import { BrowserRouter as
 
 import { connect } from 'react-redux'
 import { addItem } from '../actions/action'
+
 import { productsTabHome } from '../assets/js/productsTabs'
 
 

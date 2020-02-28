@@ -9,22 +9,22 @@ import Product from './Product'
 import { productsTab } from '../assets/js/productsTabs'
 
 
-const ProductsRouter = () => {
-    return(
-        <div>
-            { productsTab.map(( element, index ) => 
-                <Route path={ element.path }>
-                    <Product
-                        miniImgProduct={ element.miniImgProduct }
-                        imgProduct={ element.imgProduct }
-                        price={ element.price }
-                        name={ element.name }
-                    />
-                </Route>
-            )}
-        </div>
-    )
-}
+const ProductsRouter = () => 
+    <>
+        { productsTab.map(( element, index ) => 
+            <Route
+                path={ element.path }
+                key={ index }
+            >
+                <Product
+                    miniImgProduct={ element.miniImgProduct }
+                    imgProduct={ element.imgProduct }
+                    price={ element.price }
+                    name={ element.name }
+                />
+            </Route>
+        )}
+    </>
 
 
 export default ProductsRouter

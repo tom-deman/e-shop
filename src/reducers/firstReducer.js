@@ -3,7 +3,7 @@ let initialState = {
     price: 0
 }
 
-export default function reducer(state = initialState, { type, payload }) {
+export default function reducer( state = initialState, { type, payload }) {
     switch( type ) {
         case 'ADD_ITEM':
             return state = {

@@ -33,10 +33,10 @@ const Grid = ( props ) => {
                     to={ element.path }
                     className={ element.width }
                 >
-                    <div className={ `${ element.class } flex items-end justify-center animated fadeIn delay-${ index }` }>
+                    <div className={ `${ element.class } flex items-end justify-center animated fadeIn delay-${ index + 1 }` }>
                         <Link to="/">
                             <p
-                                className="hidden font-medium uppercase text-sm tracking-wide pb-4 hover:text-gray-600"
+                                className="hidden font-medium uppercase text-xs tracking-wide pb-4 hover:text-gray-600"
                                 onClick={ () => addToCart( element ) }
                             >
                                 add to cart

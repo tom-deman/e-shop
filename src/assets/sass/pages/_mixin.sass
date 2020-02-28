@@ -1,0 +1,40 @@
+@mixin scroll-div
+    height: 100vh
+    overflow-y: scroll
+
+@mixin image( $link,
+$color         : false,
+$height        : false,
+$hover         : false,
+$border        : false,
+$border-top    : false,
+$border-right  : false,
+$border-bottom : false,
+$border-left   : false )
+
+    background-image: url( '../../img/#{ $link }' )
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+    @if $height
+        height: $height
+    @if $color
+        box-shadow: inset 0 0 0 200px $color
+
+    @if $border
+        border: $border-style
+    @if $border-top
+        border-top: $border-style
+    @if $border-right
+        border-right: $border-style
+    @if $border-bottom
+        border-bottom: $border-style
+    @if $border-left
+        border-left: $border-style
+
+    @if $hover
+        &:hover
+            filter: brightness( 85% )
+            p
+                display: block

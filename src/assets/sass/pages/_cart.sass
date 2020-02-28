@@ -1,75 +1,11 @@
 #cart
-    height: 100vh
-    overflow-y: scroll
+    @include scroll-div
     #cart-header
-        height: 50vh
-        background-image: url( '../../img/header/header-cart.jpg' )
-        background-position: center
-        background-size: cover
-        background-repeat: no-repeat
+        @include image( 'header/header-cart.jpg', $height: 50vh )
 
-.product-cart-1
-    background-image: url( '../../img/products/product-1.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-2
-    background-image: url( '../../img/products/product-2.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-3
-    background-image: url( '../../img/products/product-3.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-4
-    background-image: url( '../../img/products/product-4.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-5
-    background-image: url( '../../img/products/product-5.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-6
-    background-image: url( '../../img/products/product-6.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-7
-    background-image: url( '../../img/products/product-7.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-8
-    background-image: url( '../../img/products/product-8.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-9
-    background-image: url( '../../img/products/product-9.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-10
-    background-image: url( '../../img/products/product-10.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.product-cart-11
-    background-image: url( '../../img/header/header.jpg' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
+    @for $i from 1 through 11
+        .product-cart-#{ $i }
+            @if $i != 11
+                @include image( 'products/product-#{ $i }.jpg' )
+            @else
+                @include image( 'header/header.jpg' )

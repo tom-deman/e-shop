@@ -1,31 +1,18 @@
 #contact
-    height: 100vh
-    overflow-y: scroll
+    @include scroll-div
+
     .contact-header
-        height: 80vh
-        background-image: url('../../img/contact/contact.jpg')
-        background-size: cover
-        background-repeat: no-repeat
-        background-position: center
+        @include image( 'contact/contact.jpg', $height: 80vh )
+
     .my-map
         width: 100%
         height: 50vh
 
-.city-1
-    height: 50vh
-    background-image: url('../../img/contact/brussels.jpg')
-    background-size: cover
-    background-repeat: no-repeat
-    background-position: center
-    box-shadow: inset 0 0 0 200px #0b767ecc
+    .city-1
+        @include image( 'contact/brussels.jpg', $height: 50vh, $color: #0b767ecc )
 
-.city-2
-    height: 50vh
-    background-image: url('../../img/contact/london.jpg')
-    background-size: cover
-    background-repeat: no-repeat
-    background-position: center
-    box-shadow: inset 0 0 0 1000px rgba( 0, 0, 0, 0.7 )
+    .city-2
+        @include image( 'contact/london.jpg', $height: 50vh, $color: rgba( 0, 0, 0, 0.7 ) )
 
-#form
-    background-color: rgb( 247, 247, 247 )
+    #form
+        background-color: rgb( 247, 247, 247 )

@@ -1,8 +1,4 @@
 #home
-    height: 100vh
-    overflow-y: scroll
+    @include scroll-div
     #header
-        height: 80vh
-        background-size: cover
-        background-position: center
-        background-image: url('../../img/header/header.jpg')
+        @include image( 'header/header.jpg', $height: 80vh )

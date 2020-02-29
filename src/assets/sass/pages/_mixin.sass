@@ -2,23 +2,12 @@
     height: 100vh
     overflow-y: scroll
 
-@mixin image( $link,
-$color         : false,
-$height        : false,
-$hover         : false,
-$border        : false,
-$border-top    : false,
-$border-right  : false,
-$border-bottom : false,
-$border-left   : false )
+@mixin image( $link, $color: false, $height: false, $hover: false, $border: false, $border-top: false, $border-right: false, $border-bottom: false, $border-left: false )
 
     background-image: url( '../../img/#{ $link }' )
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
     @if $height
         height: $height
+
     @if $color
         box-shadow: inset 0 0 0 200px $color
 

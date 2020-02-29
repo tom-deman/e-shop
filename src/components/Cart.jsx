@@ -1,12 +1,14 @@
 import React from 'react'
 
-import GridCart from './GridCart'
+import GridCart     from './GridCart'
+import { imgClass } from '../assets/js/variables'
+
 
 const Cart = () => 
     <div id="cart">
         <div
             id="cart-header"
-            className="flex items-center justify-center"
+            className={`flex items-center justify-center ${ imgClass }`}
         >
             <div className="text-center">
                 <p className="text-white font-medium text-4xl">

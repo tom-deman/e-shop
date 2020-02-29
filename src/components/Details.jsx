@@ -6,6 +6,8 @@ import { detailsTabs } from '../assets/js/productsTabs'
 import { connect } from 'react-redux'
 import { addItem } from '../actions/action'
 
+import { imgClass, button } from '../assets/js/variables'
+
 
 const Details = ( props ) => {
     const [ quantity, setQuantity ] = useState( 1 )
@@ -36,7 +38,7 @@ const Details = ( props ) => {
     return(
         <div className="bg-white w-full p-12 flex">
             <div className="w-1/2 mt-4 p-5">
-                <div className={ props.imgProduct } />
+                <div className={`${props.imgProduct} ${ imgClass }`} />
             </div>
 
             <div className="w-1/2 mt-4 px-8 py-2">
@@ -60,7 +62,7 @@ const Details = ( props ) => {
                         onKeyDown={ ( event ) => event.preventDefault() }
                     />
                     <button
-                        className="border border-gray-800 px-6 bg-gray-800 text-white uppercase ml-5 rounded-sm text-sm hover:text-black hover:bg-white"
+                        className={ button }
                         onClick={ () => addToCart() }
                     >
                         Add to cart

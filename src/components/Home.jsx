@@ -12,6 +12,8 @@ import Grid       from './Grid'
 import Newsletter from './Newsletter'
 import Footer     from './Footer'
 
+import { animation } from '../assets/js/variables'
+
 
 const Home = () => {
     const [count, setCount] = useState( false )
@@ -48,7 +50,7 @@ const Home = () => {
 
             <div
                 className={ count
-                    ? 'h-4 w-4 bottom-0 mb-10 mr-12 right-0 fixed z-50 animated fadeIn'
+                    ? `h-4 w-4 bottom-0 mb-10 mr-12 right-0 fixed z-50 ${ animation }`
                     : 'hidden'
                 }
             >

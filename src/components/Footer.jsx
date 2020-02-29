@@ -2,6 +2,8 @@ import React from 'react'
 
 import { footerTabs } from '../assets/js/footerTabs'
 
+const pClass = 'text-white text-sm font-thin m-1'
+
 
 const Footer = () =>
     <div
@@ -49,13 +51,13 @@ const Footer = () =>
                 <p className="mb-8 font-bold text-lg">
                     Refunds and Returns
                 </p>
-                <p className="text-white text-sm font-thin m-1">
+                <p className={ pClass }>
                     Refunds and Returns Monday – Friday, 9 am to 18 pm
                 </p>
-                <button className="text-white text-sm font-thin m-1 hover:text-gray-400">
+                <button className={`${ pClass } hover:text-gray-400`}>
                     test@test.com
                 </button>
-                <p className="text-white text-sm font-thin m-1">
+                <p className={ pClass }>
                     +123 456 789
                 </p>
             </div>

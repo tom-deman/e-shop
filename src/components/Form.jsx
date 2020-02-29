@@ -1,5 +1,7 @@
 import React from 'react'
 
+const inputClass = 'w-full bg-transparent py-2 px-3 border border-gray-400'
+
 
 const Form = () => 
     <div id="form">
@@ -11,7 +13,7 @@ const Form = () => 
                 <div className="flex">
                     <div className="w-full">
                         <input
-                            className="w-full bg-transparent py-2 px-3 border border-gray-400"
+                            className={ inputClass }
                             type="text"
                             placeholder="Your full name"
                             required
@@ -23,7 +25,7 @@ const Form = () => 
                     <div className="w-1/2 pr-2">
                         <input
                             type="email"
-                            className="w-full bg-transparent py-2 px-3 border border-gray-400"
+                            className={ inputClass }
                             placeholder="Your Email"
                             required
                         />
@@ -31,7 +33,7 @@ const Form = () => 
                     <div className="w-1/2 pl-2">
                         <input
                             type="text"
-                            className="w-full bg-transparent py-2 px-3 border border-gray-400"
+                            className={ inputClass }
                             placeholder="Phone"
                             required
                         />
@@ -42,7 +44,7 @@ const Form = () => 
                     <div className="w-full">
                         <textarea
                             placeholder="Describe your project"
-                            className="bg-transparent w-full border border-gray-400 px-3 py-2"
+                            className={ inputClass }
                             name="form-area"
                             rows="7"
                             required
@@ -54,7 +56,7 @@ const Form = () => 
                     <div className="w-full">
                         <input
                             type="text"
-                            className="w-full bg-transparent py-2 px-3 border border-gray-400 mt-4 mb-16"
+                            className={`${ inputClass } mt-4 mb-16`}
                             placeholder="Value"
                         />
                     </div>

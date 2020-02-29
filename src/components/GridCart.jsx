@@ -2,7 +2,10 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import { cartTabs } from '../assets/js/cartTabs'
+import { cartTabs }         from '../assets/js/cartTabs'
+import { imgClass, button } from '../assets/js/variables'
+
+const divClass = 'w-1/5 flex items-center'
 
 
 const GridCart = ( props ) => 
@@ -35,25 +38,25 @@ const GridCart = ( props ) => 
                             className="flex mx-10 py-4 px-4 border-b border-r border-l h-40 border-gray-400"
                             key={ index }
                         >
-                            <div className="w-1/5 flex items-center">
-                                <div className={ `h-24 w-24 ml-8 ${ element.miniImgProduct }` } />
+                            <div className={ divClass }>
+                                <div className={ `h-24 w-24 ml-8 ${ element.miniImgProduct } ${ imgClass }` } />
                             </div>
-                            <div className="w-1/5 flex items-center">
+                            <div className={ divClass }>
                                 <p>
                                     { element.name }
                                 </p>
                             </div>
-                            <div className="w-1/5 flex items-center">
+                            <div className={ divClass }>
                                 <p>
                                     { `€${ element.price }` }
                                 </p>
                             </div>
-                            <div className="w-1/5 flex items-center">
+                            <div className={ divClass }>
                                 <p className="ml-6">
                                     { element.quantity }
                                 </p>
                             </div>
-                            <div className="w-1/5 flex items-center">
+                            <div className={ divClass }>
                                 <p>
                                     { `€${ element.total }` }
                                 </p>
@@ -77,7 +80,7 @@ const GridCart = ( props ) => 
         </div>
 
         <div className="flex justify-end px-10 pb-12">
-            <button className="border border-gray-800 py-3 px-6 bg-gray-800 text-white uppercase ml-5 rounded-sm text-sm hover:text-black hover:bg-white">
+            <button className={ `${ button } py-4` }>
                 Proceed to checkout
             </button>
         </div>

@@ -8,7 +8,8 @@ import { BrowserRouter as
 import { connect } from 'react-redux'
 import { addItem } from '../actions/action'
 
-import { productsTabHome } from '../assets/js/productsTabs'
+import { productsTabHome }     from '../assets/js/productsTabs'
+import { imgClass, animation } from '../assets/js/variables'
 
 
 const Grid = ( props ) => {
@@ -33,7 +34,7 @@ const Grid = ( props ) => {
                     to={ element.path }
                     className={ element.width }
                 >
-                    <div className={ `${ element.class } flex items-end justify-center animated fadeIn delay-${ index + 1 }` }>
+                    <div className={ `${ element.class } flex items-end ${ imgClass } justify-center ${ animation } delay-${ index + 1 }` }>
                         <Link to="/">
                             <p
                                 className="hidden font-medium uppercase text-xs tracking-wide pb-4 hover:text-gray-600"

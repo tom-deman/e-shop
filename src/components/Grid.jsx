@@ -32,7 +32,7 @@ const Grid = ( props ) => {
                 <Link
                     key={ index }
                     to={ element.path }
-                    className={ element.width }
+                    className={ `md:${ element.width } w-full` }
                 >
                     <div className={ `${ element.class } flex items-end ${ imgClass } justify-center ${ animation } delay-${ index + 1 }` }>
                         <Link to="/">

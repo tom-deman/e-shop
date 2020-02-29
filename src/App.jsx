@@ -30,7 +30,7 @@ const App = () => 
                 <Sidebar />
 
                 <div
-                    className="w-4/5"
+                    className="md:w-4/5 w-full"
                     id="right"
                 >
                     <Switch>

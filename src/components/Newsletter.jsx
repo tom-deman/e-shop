@@ -3,16 +3,16 @@ import React from 'react'
 
 const Newsletter = () => 
     <div
-        className="flex py-16"
+        className="md:flex block py-20 md:text-left text-center"
         id="newsletter"
     >
-        <p className="text-white text-3xl tracking-tighter font-bold ml-32">
+        <p className="text-white text-3xl tracking-tighter font-bold md:ml-32">
             Sign up to our newsletter
         </p>
         <form>
             <input
                 type="email"
-                className="newsletter-input border-b border-teal-500 rounded w-64 pl-4 text-white ml-40 p-2"
+                className="newsletter-input border-b border-teal-500 rounded md:w-64 w-48 pl-4 text-white md:ml-40 ml-0 p-2 md:mt-0 mt-12"
                 placeholder="Your email"
                 required
             />

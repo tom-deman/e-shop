@@ -13,18 +13,18 @@ const GridShop = () => 
     <>
         { productsTabShop.map(( element, index ) => 
             <div
-                className="flex"
+                className="flex flex-wrap"
                 key={ index }
             >
                 <Link
-                    className="w-1/2"
+                    className="md:w-1/2 w-full"
                     to={ element.left }
                 >
                     <div className={ `${ element.left } ${ imgClass } ${ animation } ${ element.leftAnimate }` } />
                 </Link>
 
                 <Link
-                    className="w-1/2"
+                    className="md:w-1/2 w-full"
                     to={ element.right }
                 >
                     <div className={ `${ element.right } ${ imgClass } ${ animation } ${ element.rightAnimate }` } />

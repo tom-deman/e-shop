@@ -1,0 +1,30 @@
+@media screen and ( max-width: 770px )
+    #home
+        #header
+            height: 35vh
+
+        @for $i from 1 through 6
+            .home-#{ $i }
+                @if $i == 6
+                    display: none
+                @else
+                    height: 50vh
+                    border-top: none
+                    @if $i != 5
+                        border-bottom: $border-style
+                &:hover
+                    filter: none
+                    p
+                        display: none
+
+    #shop
+        .shop-header
+            height: 35vh
+
+        @for $i from 1 through 10
+            .product-#{ $i }
+                height: 50vh
+
+    #contact
+        .contact-header
+            height: 50vh

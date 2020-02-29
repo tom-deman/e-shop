@@ -11,7 +11,7 @@ import { imgClass, animation } from '../assets/js/variables'
 const Contact = () => 
     <div id="contact">
         <div className={ `flex items-center justify-center ${ imgClass } contact-header` }>
-            <p className={ `uppercase text-6xl text-white font-bold text-center ${ animation } slow` }>
+            <p className={ `uppercase md:text-6xl text-4xl text-white font-bold text-center ${ animation } slow` }>
                 Let's talk
             </p>
         </div>

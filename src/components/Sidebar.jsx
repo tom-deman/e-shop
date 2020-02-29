@@ -10,7 +10,7 @@ import { navigationLinks, socialTabs } from '../assets/js/sidebarsTabs.js'
 
 const Sidebar = () =>
     <div
-        className="w-1/5 h-screen"
+        className="w-1/5 hidden md:block h-screen"
         id="sidebar"
     >
         <div className="select-none w-12 h-12 rounded-full m-auto px-2 pb-2 pt-1 mt-10 border-2 border-gray-300 text-center">

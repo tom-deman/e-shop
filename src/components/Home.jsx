@@ -12,7 +12,7 @@ import Grid       from './Grid'
 import Newsletter from './Newsletter'
 import Footer     from './Footer'
 
-import { animation } from '../assets/js/variables'
+import { animation, imgClass } from '../assets/js/variables'
 
 
 const Home = () => {
@@ -34,14 +34,14 @@ const Home = () => {
         <div id="home">
             <div
                 id="header"
-                className="flex items-end"
+                className={ `flex items-end ${ imgClass }` }
             >
                 <div className="ml-20 mb-12">
                     <Link to='/product-11'>
-                        <h2 className="text-5xl font-extrabold text-white select-none">
+                        <h2 className="md:text-5xl text-3xl font-extrabold text-white select-none">
                             BW Hphones
                         </h2>
-                        <p className="text-white text-5xl font-extrabold select-none">
+                        <p className="text-white md:text-5xl text-3xl font-extrabold select-none">
                             €100
                         </p>
                     </Link>
@@ -50,7 +50,7 @@ const Home = () => {
 
             <div
                 className={ count
-                    ? `h-4 w-4 bottom-0 mb-10 mr-12 right-0 fixed z-50 ${ animation }`
+                    ? `h-4 w-4 bottom-0 md:mb-16 md:mr-16 mb-12 mr-12 right-0 fixed z-50 ${ animation }`
                     : 'hidden'
                 }
             >

@@ -6,8 +6,8 @@ import { imgClass } from '../assets/js/variables'
 
 
 const Location = () => 
-    <div className="flex">
-        <div className="w-2/4 bg-blue-400">
+    <div className="flex flex-wrap">
+        <div className="md:w-2/4 w-full bg-blue-400">
             <iframe
                 title="map"
                 className="my-map w-full bg-white"
@@ -16,7 +16,7 @@ const Location = () => 
         </div>
 
         <City
-            myClass={`w-1/4 city-1 text-center ${ imgClass }`}
+            myClass={`md:w-1/4 w-full city-1 text-center ${ imgClass }`}
             city="Brussels"
             addressOne="Rue royale"
             addressTwo="Brussels, Belgium"
@@ -24,7 +24,7 @@ const Location = () => 
         />
 
         <City
-            myClass={`w-1/4 city-2 text-center ${ imgClass }`}
+            myClass={`md:w-1/4 w-full city-2 text-center ${ imgClass }`}
             city="London"
             addressOne="86 Nenthead Road"
             addressTwo="High Green, London"

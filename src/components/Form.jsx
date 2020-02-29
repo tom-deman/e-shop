@@ -21,8 +21,8 @@ const Form = () => 
                     </div>
                 </div>
 
-                <div className="flex my-5">
-                    <div className="w-1/2 pr-2">
+                <div className="flex flex-wrap my-5">
+                    <div className="md:w-1/2 w-full md:pr-2 pr-0 md:mb-0 mb-5">
                         <input
                             type="email"
                             className={ inputClass }
@@ -30,7 +30,7 @@ const Form = () => 
                             required
                         />
                     </div>
-                    <div className="w-1/2 pl-2">
+                    <div className="md:w-1/2 w-full md:pl-2 pl-0 md:py-0">
                         <input
                             type="text"
                             className={ inputClass }

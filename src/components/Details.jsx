@@ -36,12 +36,12 @@ const Details = ( props ) => {
 
 
     return(
-        <div className="bg-white w-full p-12 flex">
-            <div className="w-1/2 mt-4 p-5">
+        <div className="bg-white w-full p-12 flex flex-wrap">
+            <div className="md:w-1/2 w-full mt-4 p-5">
                 <div className={`${props.imgProduct} ${ imgClass }`} />
             </div>
 
-            <div className="w-1/2 mt-4 px-8 py-2">
+            <div className="md:w-1/2 w-full mt-4 px-8 py-2">
                 <p className="text-4xl font-semibold text-gray-800">
                     { props.name }
                 </p>
@@ -76,10 +76,10 @@ const Details = ( props ) => {
                         className="flex my-1"
                         key={ index }
                     >
-                        <p className="w-1/5">
+                        <p className="md:w-1/5 w-full">
                             { element.left }
                         </p>
-                        <p className="w-3/5 font-light text-gray-700 ml-4">
+                        <p className="md:w-3/5 w-full font-light text-gray-700 ml-4">
                             { element.right }
                         </p>
                     </div>
@@ -88,10 +88,10 @@ const Details = ( props ) => {
                 <hr className="my-8" />
 
                 <div className="flex">
-                    <p className="w-1/5">
+                    <p className="md:w-1/5 w-full">
                         Share
                     </p>
-                    <div className="w-3/5">
+                    <div className="md:w-3/5 w-full">
                         <ul className="flex">
                             { socialTabs.map(( element, index ) => 
                                 <li

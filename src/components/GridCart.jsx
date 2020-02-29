@@ -10,7 +10,7 @@ const divClass = 'w-1/5 flex items-center'
 
 const GridCart = ( props ) => 
     <div className="bg-white pt-32">
-        <div className="flex px-4 py-4 mx-10 border border-gray-400">
+        <div className="md:flex hidden px-4 py-4 mx-10 border border-gray-400">
             <div className="w-1/5" />
             { cartTabs.map(( element, index ) =>
                 <div
@@ -26,7 +26,7 @@ const GridCart = ( props ) => 
 
         { props.cart.length === 1
             ?
-                <div className="flex mx-10 py-4 px-4 border-b border-r border-l h-24 justify-center items-center border-gray-400">
+                <div className="flex mx-10 py-4 px-4 md:border-t-0 border-t border-b border-r border-l h-24 justify-center items-center border-gray-400">
                     <p>
                         Your card is empty
                     </p>
@@ -35,28 +35,40 @@ const GridCart = ( props ) => 
                 props.cart.map(( element, index ) =>
                     index > 0 &&
                         <div
-                            className="flex mx-10 py-4 px-4 border-b border-r border-l h-40 border-gray-400"
+                            className="flex flex-wrap mx-10 py-4 px-4 border-b border-r border-l md:border-t-0 border-t md:h-40 h-auto border-gray-400"
                             key={ index }
                         >
-                            <div className={ divClass }>
-                                <div className={ `h-24 w-24 ml-8 ${ element.miniImgProduct } ${ imgClass }` } />
+                            <div className={ `md:${ divClass } md:justify-start justify-center w-full md:py-0 pb-6` }>
+                                <div className={ `h-24 w-24 md:ml-8 ml-0 md:mt-0 mt-2 ${ element.miniImgProduct } ${ imgClass }` } />
                             </div>
-                            <div className={ divClass }>
+                            <div className={ `md:${ divClass } md:justify-start justify-around w-full md:pb-0 pb-6` }>
+                                <p className="md:hidden block">
+                                    Item:
+                                </p>
                                 <p>
                                     { element.name }
                                 </p>
                             </div>
-                            <div className={ divClass }>
+                            <div className={ `md:${ divClass } md:justify-start justify-around w-full md:pb-0 pb-6` }>
+                                <p className="md:hidden block">
+                                    Price:
+                                </p>
                                 <p>
                                     { `€${ element.price }` }
                                 </p>
                             </div>
-                            <div className={ divClass }>
-                                <p className="ml-6">
+                            <div className={ `md:${ divClass } md:justify-start justify-around w-full md:pb-0 pb-6` }>
+                                <p className="md:hidden block">
+                                    Quantity:
+                                </p>
+                                <p className="md:ml-6 ml-0">
                                     { element.quantity }
                                 </p>
                             </div>
-                            <div className={ divClass }>
+                            <div className={ `md:${ divClass } md:justify-start justify-around w-full md:pb-0 pb-6` }>
+                                <p className="md:hidden block">
+                                    Total:
+                                </p>
                                 <p>
                                     { `€${ element.total }` }
                                 </p>

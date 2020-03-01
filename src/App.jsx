@@ -8,7 +8,7 @@ import { Switch } from 'react-router'
 import { BrowserRouter as
     Router,
     Route,
-    Link
+    NavLink
 } from 'react-router-dom'
 
 // Other
@@ -99,12 +99,14 @@ const App = () => {
                                                             { element }
                                                         </a>
                                                     :
-                                                        <Link
+                                                        <NavLink
+                                                            exact
+                                                            activeClassName="text-gray-500"
                                                             className={ `${ modalClass } delay-${ index } slow` }
-                                                            to={ index === 0 ? '/' : `/${ element.toLowerCase() }` }
+                                                            to={ index === 0 ? '/e-shop/' : `/e-shop/${ element.toLowerCase() }` }
                                                         >
                                                             { element }
-                                                        </Link>
+                                                        </NavLink>
                                                 }
                                             </li>
                                         )}

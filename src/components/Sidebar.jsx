@@ -2,7 +2,7 @@ import React from 'react'
 
 import { BrowserRouter as
     Route,
-    Link
+    NavLink
 } from 'react-router-dom'
 
 import { navigationLinks, socialTabs } from '../assets/js/sidebarsTabs.js'
@@ -39,12 +39,14 @@ const Sidebar = () =>
                                     { element }
                                 </a>
                             :
-                                <Link
+                                <NavLink
+                                    exact
+                                    activeClassName="text-gray-500"
                                     className="text-white hover:text-gray-500 text-sm m-1"
-                                    to={ index === 0 ? '/' : `/${ element.toLowerCase() }` }
+                                    to={ index === 0 ? '/e-shop/' : `/e-shop/${ element.toLowerCase() }` }
                                 >
                                     { element }
-                                </Link>
+                                </NavLink>
                         }
                     </li>
                 )}

@@ -12,6 +12,7 @@ import { imgClass, button } from '../assets/js/variables'
 const Details = ( props ) => {
     const [ quantity, setQuantity ] = useState( 1 )
 
+    // Allow only numbers between 1 and 5 in the input and set state to the new quantity
     const changeQuantity = ( element ) => {
         let { min, max, value } = element.target
         value = Math.max(
@@ -22,6 +23,7 @@ const Details = ( props ) => {
         setQuantity( value )
     }
 
+    // add item to the redux cart with props value for the object
     const addToCart = () => {
         let product = {
             name          : props.name,
@@ -34,7 +36,7 @@ const Details = ( props ) => {
         props.addItem( product )
     }
 
-
+    // All the props here are initially located in the productsTab.js (productsTab array) file and used by ProductsRouter.jsx file
     return(
         <div className="bg-white w-full p-12 flex flex-wrap">
             <div className="md:w-1/2 w-full mt-4 p-5">
@@ -59,6 +61,7 @@ const Details = ( props ) => {
                         max="5"
                         value={ quantity }
                         onChange={ ( event ) => changeQuantity( event ) }
+                        // disable default user key down
                         onKeyDown={ ( event ) => event.preventDefault() }
                     />
                     <button
@@ -71,6 +74,7 @@ const Details = ( props ) => {
 
                 <hr className="my-8" />
 
+                {/* DetailsTabs is located in productsTab.js file */}
                 { detailsTabs.map(( element, index ) => 
                     <div
                         className="flex my-1"
@@ -93,6 +97,7 @@ const Details = ( props ) => {
                     </p>
                     <div className="md:w-3/5 w-full">
                         <ul className="flex">
+                            {/* See in productsTab.js file */}
                             { socialTabs.map(( element, index ) => 
                                 <li
                                     key={ index }

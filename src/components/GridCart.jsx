@@ -24,6 +24,7 @@ const GridCart = ( props ) => 
             )}
         </div>
 
+        {/* Checking if the redux cart is empty or not */}
         { props.cart.length === 1
             ?
                 <div className="flex mx-10 py-4 px-4 md:border-t-0 border-t border-b border-r border-l h-24 justify-center items-center border-gray-400">
@@ -33,7 +34,9 @@ const GridCart = ( props ) => 
                 </div>
             :
                 props.cart.map(( element, index ) =>
+                    // Ignoring the first empty objects in redux cart for the v1, cart still need to be worked on
                     index > 0 &&
+                        // Taking data from the redux cart (with map) and display them
                         <div
                             className="flex flex-wrap mx-10 py-4 px-4 border-b border-r border-l md:border-t-0 border-t md:h-40 h-auto border-gray-400"
                             key={ index }

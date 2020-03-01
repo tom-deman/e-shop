@@ -12,6 +12,7 @@ const Shop = () => 
             </p>
         </div>
 
+        {/* Grid with products from the products part */}
         <GridShop />
     </div>
 

@@ -26,7 +26,7 @@ const socialTabs = [
     {
         href: 'https://instagram.com',
         icon: 'fab fa-instagram'
-    },
+    }
 ]
 
 export { navigationLinks, socialTabs }

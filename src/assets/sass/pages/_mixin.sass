@@ -2,9 +2,14 @@
     height: 100vh
     overflow-y: scroll
 
+/**
+ *  background-image: link must be specified
+ *  height, color, borders and hover: optionnal, shown only if specified
+ *  used for generating background-image for the products
+ */
 @mixin image( $link, $color: false, $height: false, $hover: false, $border: false, $border-top: false, $border-right: false, $border-bottom: false, $border-left: false )
-
     background-image: url( '../../img/#{ $link }' )
+
     @if $height
         height: $height
 

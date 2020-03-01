@@ -19,5 +19,5 @@ export const routerTabs = [
     {
         path     : '/cart',
         component: Cart
-    },
+    }
 ]

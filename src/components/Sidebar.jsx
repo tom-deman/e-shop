@@ -21,11 +21,13 @@ const Sidebar = () =>
 
         <div>
             <ul className="mt-56 mb-64">
+                {/* Sidebars links to the different route in the site, done by maping navigationLinks (located in sidebarsTabs.js) */}
                 { navigationLinks.map(( element, index ) => 
                     <li
                         key={ index }
                         className="text-center"
                     >
+                        {/* The fourth index is my personnal portfolio links, it's not a Route */}
                         { index === 4
                             ?
                                 <a
@@ -51,6 +53,7 @@ const Sidebar = () =>
 
         <div className="pt-8">
             <ul className="flex m-auto w-40">
+                {/* Font awesome icons with social links */}
                 { socialTabs.map(( element, index ) => 
                     <li key={ index }>
                         <a

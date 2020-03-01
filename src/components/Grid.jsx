@@ -13,6 +13,7 @@ import { imgClass, animation } from '../assets/js/variables'
 
 
 const Grid = ( props ) => {
+    // Add item to the redux cart with given values by productsTabHome (productsTabs.js)
     const addToCart = ( element ) => {
         let product = {
             name: element.name,

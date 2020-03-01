@@ -8,6 +8,7 @@ import Form       from './Form'
 
 import { imgClass, animation } from '../assets/js/variables'
 
+
 const Contact = () => 
     <div id="contact">
         <div className={ `flex items-center justify-center ${ imgClass } contact-header` }>
@@ -16,10 +17,12 @@ const Contact = () => 
             </p>
         </div>
 
+        {/* Contains the map and Two City components */}
         <Location />
 
         <Form />
 
+        {/* Contains the font-awesome icons with social links */}
         <Social />
 
         <Newsletter />

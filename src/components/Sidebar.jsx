@@ -43,7 +43,7 @@ const Sidebar = () =>
                                     exact
                                     activeClassName="text-gray-500"
                                     className="text-white hover:text-gray-500 text-sm m-1"
-                                    to={ index === 0 ? '/e-shop/' : `/e-shop/${ element.toLowerCase() }` }
+                                    to={ index === 0 ? '/e-shop/' : `/${ element.toLowerCase() }` }
                                 >
                                     { element }
                                 </NavLink>

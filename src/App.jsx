@@ -103,7 +103,7 @@ const App = () => {
                                                             exact
                                                             activeClassName="text-gray-500"
                                                             className={ `${ modalClass } delay-${ index } slow` }
-                                                            to={ index === 0 ? '/e-shop/' : `/e-shop/${ element.toLowerCase() }` }
+                                                            to={ index === 0 ? '/e-shop/' : `/${ element.toLowerCase() }` }
                                                         >
                                                             { element }
                                                         </NavLink>

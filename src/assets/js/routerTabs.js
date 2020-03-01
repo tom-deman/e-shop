@@ -5,19 +5,19 @@ import Cart    from '../../components/Cart'
 
 export const routerTabs = [
     {
-        path     : '/',
+        path     : '/e-shop/',
         component: Home
     },
     {
-        path     : '/contact',
+        path     : '/e-shop/contact',
         component: Contact
     },
     {
-        path     : '/shop',
+        path     : '/e-shop/shop',
         component: Shop
     },
     {
-        path     : '/cart',
+        path     : '/e-shop/cart',
         component: Cart
     }
 ]

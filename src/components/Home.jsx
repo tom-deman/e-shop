@@ -39,7 +39,7 @@ const Home = () => {
                 className={ `flex items-end ${ imgClass }` }
             >
                 <div className="ml-20 mb-12">
-                    <Link to='/product-11'>
+                    <Link to='/e-shop/product-11'>
                         <h2 className="md:text-5xl text-3xl font-extrabold text-white select-none">
                             BW Hphones
                         </h2>

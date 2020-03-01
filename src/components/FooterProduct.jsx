@@ -9,7 +9,7 @@ import { BrowserRouter as
 const FooterProduct = () => 
     <div className="bg-gray-100 py-8 w-full text-center border-t border-gray-300">
         <Link
-            to="/shop"
+            to="/e-shop/shop"
             className="uppercase text-sm tracking-wide hover:text-teal-500"
         >
             Back to shop

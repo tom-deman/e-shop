@@ -36,7 +36,7 @@ const Grid = ( props ) => {
                     className={ `md:${ element.width } w-full` }
                 >
                     <div className={ `${ element.class } flex items-end ${ imgClass } justify-center ${ animation } delay-${ index + 1 }` }>
-                        <Link to="/">
+                        <Link to="/e-shop/">
                             <p
                                 className="hidden font-medium uppercase text-xs tracking-wide pb-4 hover:text-gray-600"
                                 onClick={ () => addToCart( element ) }

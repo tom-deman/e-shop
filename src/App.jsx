@@ -25,6 +25,7 @@ import { navigationLinks, socialTabs } from './assets/js/sidebarsTabs.js'
 
 
 const App = () => {
+    // First state to display or not he modal for mobile burger, second to show the burger svg or not
     const [ modal, setModal ] = useState( false )
     const [ hidden, setHidden ] = useState( '' )
 
@@ -103,7 +104,7 @@ const App = () => {
                                                             exact
                                                             activeClassName="text-gray-500"
                                                             className={ `${ modalClass } delay-${ index } slow` }
-                                                            to={ index === 0 ? '/e-shop/' : `/${ element.toLowerCase() }` }
+                                                            to={ index === 0 ? '/e-shop/' : `/e-shop/${ element.toLowerCase() }` }
                                                         >
                                                             { element }
                                                         </NavLink>

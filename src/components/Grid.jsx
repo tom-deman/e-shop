@@ -5,25 +5,37 @@ import { BrowserRouter as
     Link
 } from 'react-router-dom'
 
-import { connect } from 'react-redux'
-import { addItem } from '../actions/action'
+import { connect }                   from 'react-redux'
+import { addItem, addQuantity } from '../actions/action'
 
 import { productsTabHome }     from '../assets/js/productsTabs'
 import { imgClass, animation } from '../assets/js/variables'
 
 
 const Grid = ( props ) => {
-    // Add item to the redux cart with given values by productsTabHome (productsTabs.js)
-    const addToCart = ( element ) => {
-        let product = {
-            name: element.name,
-            price: element.price,
-            imgProduct: element.imgProduct,
-            miniImgProduct: element.miniImgProduct,
-            quantity: 1,
-            total: element.price
+
+    const addToCart = ( event, element ) => {
+        event.preventDefault()
+        const index = props.cart.findIndex( el => el.name === element.name )
+
+        if ( index !== -1 ) {
+            const data = {
+                index: index,
+                price: element.price
+            }
+            props.addQuantity( data )
         }
-        props.addItem( product )
+        else {
+            const product = {
+                name          : element.name,
+                price         : element.price,
+                imgProduct    : element.imgProduct,
+                miniImgProduct: element.miniImgProduct,
+                quantity      : 1,
+                total         : element.price
+            }
+            props.addItem( product )
+        }
     }
 
 
@@ -31,19 +43,17 @@ const Grid = ( props ) => {
         <div className="flex flex-wrap">
             { productsTabHome.map(( element, index ) =>
                 <Link
-                    key={ index }
-                    to={ element.path }
-                    className={ `md:${ element.width } w-full` }
+                    key       = { index }
+                    to        = { element.path }
+                    className = { `md:${ element.width } w-full` }
                 >
                     <div className={ `${ element.class } flex items-end ${ imgClass } justify-center ${ animation } delay-${ index + 1 }` }>
-                        <Link to="/e-shop/">
-                            <p
-                                className="hidden font-medium uppercase text-xs tracking-wide pb-4 hover:text-gray-600"
-                                onClick={ () => addToCart( element ) }
-                            >
-                                add to cart
-                            </p>
-                        </Link>
+                        <p
+                            className = "hidden font-medium uppercase text-xs tracking-wide pb-4 hover:text-gray-600"
+                            onClick   = { ( event ) => addToCart( event, element ) }
+                        >
+                            add to cart
+                        </p>
                     </div>
                 </Link>
             )}
@@ -54,12 +64,14 @@ const Grid = ( props ) => {
 
 const mapStateToProps = ( state ) => {
     return {
-        cart: state.cart.cart,
+        cart : state.cart.cart,
+        price: state.price.price
     }
 }
 
 const mapActionToProps = {
-    addItem: addItem
+    addItem    : addItem,
+    addQuantity: addQuantity
 }
 
 

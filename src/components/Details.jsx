@@ -40,7 +40,7 @@ const Details = ( props ) => {
     return(
         <div className="bg-white w-full p-12 flex flex-wrap">
             <div className="md:w-1/2 w-full mt-4 p-5">
-                <div className={`${props.imgProduct} ${ imgClass }`} />
+                <div className={`${ props.imgProduct } ${ imgClass }`} />
             </div>
 
             <div className="md:w-1/2 w-full mt-4 px-8 py-2">
@@ -55,18 +55,18 @@ const Details = ( props ) => {
                 </p>
                 <div className="flex mt-6">
                     <input
-                        type="number"
-                        className="w-24 h-12 border border-gray-300 shadow-sm text-center rounded-sm"
-                        min="1"
-                        max="5"
-                        value={ quantity }
-                        onChange={ ( event ) => changeQuantity( event ) }
+                        type      = "number"
+                        className = "w-24 h-12 border border-gray-300 shadow-sm text-center rounded-sm"
+                        min       = "1"
+                        max       = "5"
+                        value     = { quantity }
+                        onChange  = { ( event ) => changeQuantity( event ) }
                         // disable default user key down
-                        onKeyDown={ ( event ) => event.preventDefault() }
+                        onKeyDown = { ( event ) => event.preventDefault() }
                     />
                     <button
-                        className={ button }
-                        onClick={ () => addToCart() }
+                        className = { button }
+                        onClick   = { () => addToCart() }
                     >
                         Add to cart
                     </button>
@@ -77,8 +77,8 @@ const Details = ( props ) => {
                 {/* DetailsTabs is located in productsTab.js file */}
                 { detailsTabs.map(( element, index ) => 
                     <div
-                        className="flex my-1"
-                        key={ index }
+                        className = "flex my-1"
+                        key       = { index }
                     >
                         <p className="md:w-1/5 w-full">
                             { element.left }
@@ -104,9 +104,9 @@ const Details = ( props ) => {
                                     className=""
                                 >
                                     <a
-                                        href={ element.href }
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        href   = { element.href }
+                                        target = "_blank"
+                                        rel    = "noopener noreferrer"
                                     >
                                         <i className={ `${ element.icon } m-2 text-sm` } />
                                     </a>

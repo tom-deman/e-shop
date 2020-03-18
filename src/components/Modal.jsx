@@ -5,36 +5,31 @@ import { BrowserRouter as
     NavLink
 } from 'react-router-dom'
 
-import { navigationLinks, socialTabs } from '../assets/js/sidebarsTabs.js'
+import { navigationLinks, socialTabs } from '../assets/js/sidebarsTabs'
+
+const modalClass = 'text-gray-100 font-semibold text-lg hover:text-gray-500 animated fadeInDown'
 
 
-const Sidebar = () =>
+const Modal = ( props ) => 
     <div
-        className = "w-1/5 hidden md:block h-screen"
-        id        = "sidebar"
+        id        = "modal"
+        className = "flex top-0 w-full h-full animated fadeIn delay-1"
+        onClick   = { () => props.closeModal() }
     >
-        <div className="select-none w-12 h-12 rounded-full m-auto px-2 pb-2 pt-1 mt-10 border-2 border-gray-300 text-center">
-            <h1 className="text-2xl font-medium text-gray-300">
-                T
-            </h1>
-        </div>
-
-        <div>
-            <ul className="mt-56 mb-64">
-                {/* Sidebars links to the different route in the site, done by maping navigationLinks (located in sidebarsTabs.js) */}
+        <div className="text-center w-1/2 mx-auto mt-48">
+            <ul>
                 { navigationLinks.map(( element, index ) => 
                     <li
                         key       = { index }
-                        className = "text-center"
+                        className = "text-center my-3"
                     >
-                        {/* The fourth index is my personnal portfolio links, it's not a Route */}
                         { index === 4
                             ?
                                 <a
                                     href      = "https://tom-deman.github.io/portfolio/"
                                     target    = "_blank"
                                     rel       = "noopener noreferrer"
-                                    className = "text-white hover:text-gray-500 text-sm m-1"
+                                    className = { `${ modalClass } delay-${ index } slow` }
                                 >
                                     { element }
                                 </a>
@@ -42,7 +37,7 @@ const Sidebar = () =>
                                 <NavLink
                                     exact
                                     activeClassName = "text-gray-500"
-                                    className       = "text-white hover:text-gray-500 text-sm m-1"
+                                    className       = { `${ modalClass } delay-${ index } slow` }
                                     to              = { index === 0 ? '/e-shop/' : `/e-shop/${ element.toLowerCase() }` }
                                 >
                                     { element }
@@ -51,11 +46,8 @@ const Sidebar = () =>
                     </li>
                 )}
             </ul>
-        </div>
 
-        <div className="pt-8">
-            <ul className="flex m-auto w-40">
-                {/* Font awesome icons with social links */}
+            <ul className="flex h-6 justify-around m-auto w-48 mt-12">
                 { socialTabs.map(( element, index ) => 
                     <li key={ index }>
                         <a
@@ -63,7 +55,7 @@ const Sidebar = () =>
                             target = "_blank"
                             rel    = "noopener noreferrer"
                         >
-                            <i className={ `${ element.icon } text-white m-2 text-sm` } />
+                            <i className={ `${ element.icon } text-white m-2 text-sm animated delay-6 fadeInUp` } />
                         </a>
                     </li>
                 )}
@@ -72,4 +64,4 @@ const Sidebar = () =>
     </div>
 
 
-export default Sidebar
+export default Modal

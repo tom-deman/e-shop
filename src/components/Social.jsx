@@ -12,9 +12,9 @@ const Social = () => 
             { socialTabs.map(( element, index ) => 
                 <li key={ index }>
                     <a
-                        href={ element.href }
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href   = { element.href }
+                        target = "_blank"
+                        rel    = "noopener noreferrer"
                     >
                         <i className={ `${ element.icon } text-white text-2xl m-2 text-sm` } />
                     </a>

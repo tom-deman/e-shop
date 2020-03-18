@@ -13,9 +13,9 @@ const Form = () => 
                 <div className="flex">
                     <div className="w-full">
                         <input
-                            className={ inputClass }
-                            type="text"
-                            placeholder="Your full name"
+                            className   = { inputClass }
+                            type        = "text"
+                            placeholder = "Your full name"
                             required
                         />
                     </div>
@@ -24,17 +24,17 @@ const Form = () => 
                 <div className="flex flex-wrap my-5">
                     <div className="md:w-1/2 w-full md:pr-2 pr-0 md:mb-0 mb-5">
                         <input
-                            type="email"
-                            className={ inputClass }
-                            placeholder="Your Email"
+                            type        = "email"
+                            className   = { inputClass }
+                            placeholder = "Your Email"
                             required
                         />
                     </div>
                     <div className="md:w-1/2 w-full md:pl-2 pl-0 md:py-0">
                         <input
-                            type="text"
-                            className={ inputClass }
-                            placeholder="Phone"
+                            type        = "text"
+                            className   = { inputClass }
+                            placeholder = "Phone"
                             required
                         />
                     </div>
@@ -43,10 +43,10 @@ const Form = () => 
                 <div className="flex">
                     <div className="w-full">
                         <textarea
-                            placeholder="Describe your project"
-                            className={ inputClass }
-                            name="form-area"
-                            rows="7"
+                            placeholder = "Describe your project"
+                            className   = { inputClass }
+                            name        = "form-area"
+                            rows        = "7"
                             required
                         />
                     </div>
@@ -55,17 +55,17 @@ const Form = () => 
                 <div className="flex">
                     <div className="w-full">
                         <input
-                            type="text"
-                            className={`${ inputClass } mt-4 mb-16`}
-                            placeholder="Value"
+                            type        = "text"
+                            className   = {`${ inputClass } mt-4 mb-16`}
+                            placeholder = "Value"
                         />
                     </div>
                 </div>
 
                 <div className="w-full text-center pb-16">
                     <button
-                        type="submit"
-                        className="uppercase rounded-full py-3 px-5 bg-teal-500 hover:bg-teal-400 text-white text-sm"
+                        type      = "submit"
+                        className = "uppercase rounded-full py-3 px-5 bg-teal-500 hover:bg-teal-400 text-white text-sm"
                     >
                         Send request
                     </button>

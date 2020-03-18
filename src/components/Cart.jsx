@@ -7,8 +7,8 @@ import { imgClass } from '../assets/js/variables'
 const Cart = () => 
     <div id="cart">
         <div
-            id="cart-header"
-            className={`flex items-center justify-center ${ imgClass }`}
+            id        = "cart-header"
+            className = {`flex items-center justify-center ${ imgClass }`}
         >
             <div className="text-center">
                 <p className="text-white font-medium text-4xl">

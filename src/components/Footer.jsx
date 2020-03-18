@@ -7,8 +7,8 @@ const pClass = 'text-white text-sm font-thin m-1'
 
 const Footer = () =>
     <div
-        id="footer"
-        className="md:p-24 p-12 flex flex-wrap md:text-left text-center"
+        id        = "footer"
+        className = "md:p-24 p-12 flex flex-wrap md:text-left text-center"
     >
         <div className="md:w-1/4 w-full md:mb-0 mb-16">
             <div className="select-none w-12 h-12 rounded-full m-auto px-2 pb-2 pt-1 border-2 border-gray-300 text-center">
@@ -37,8 +37,8 @@ const Footer = () =>
                 <ul>
                     { footerTabs.map(( element, index ) => 
                         <li
-                            key={ index }
-                            className="mobile-add"
+                            key       = { index }
+                            className = "mobile-add"
                         >
                             <button className="font-thin text-sm m-1 hover:text-gray-400">
                                 { element }

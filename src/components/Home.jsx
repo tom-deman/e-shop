@@ -57,7 +57,7 @@ const Home = () => {
                 }
             >
                 <a href='#header'>
-                    <i class='fas fa-chevron-up text-white absolute hover:text-gray-400 p-3 to-top' />
+                    <i className='fas fa-chevron-up text-white absolute hover:text-gray-400 p-3 to-top' />
                 </a>
             </div>
 

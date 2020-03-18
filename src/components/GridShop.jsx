@@ -17,15 +17,15 @@ const GridShop = () => 
                 key={ index }
             >
                 <Link
-                    className="md:w-1/2 w-full"
-                    to={ element.leftPath }
+                    className = "md:w-1/2 w-full"
+                    to        = { element.leftPath }
                 >
                     <div className={ `${ element.left } ${ imgClass } ${ animation } ${ element.leftAnimate }` } />
                 </Link>
 
                 <Link
-                    className="md:w-1/2 w-full"
-                    to={ element.rightPath }
+                    className = "md:w-1/2 w-full"
+                    to        = { element.rightPath }
                 >
                     <div className={ `${ element.right } ${ imgClass } ${ animation } ${ element.rightAnimate }` } />
                 </Link>

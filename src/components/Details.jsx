@@ -3,14 +3,23 @@ import React, { useState } from 'react'
 import { socialTabs }  from '../assets/js/sidebarsTabs'
 import { detailsTabs } from '../assets/js/productsTabs'
 
-import { connect } from 'react-redux'
-import { addItem } from '../actions/action'
+import { BrowserRouter as
+    Route,
+    useHistory
+} from 'react-router-dom'
+
+import { connect }              from 'react-redux'
+import { addItem, addQuantity } from '../actions/action'
 
 import { imgClass, button } from '../assets/js/variables'
 
 
 const Details = ( props ) => {
-    const [ quantity, setQuantity ] = useState( 1 )
+    const [ addOrViewCart, setAddOrViewCart ] = useState( false )
+    const [ quantity, setQuantity ]           = useState( 1 )
+
+    const history = useHistory()
+
 
     // Allow only numbers between 1 and 5 in the input and set state to the new quantity
     const changeQuantity = ( element ) => {
@@ -24,21 +33,40 @@ const Details = ( props ) => {
     }
 
     // add item to the redux cart with props value for the object
-    const addToCart = () => {
-        let product = {
-            name          : props.name,
-            price         : props.price,
-            imgProduct    : props.imgProduct,
-            miniImgProduct: props.miniImgProduct,
-            quantity      : quantity,
-            total         : quantity * props.price
+    const addToCart = ( props ) => {
+        props.showSnackbar( quantity )
+        setAddOrViewCart( true )
+
+        const index = props.cart.findIndex( el => el.name === props.name )
+
+        if ( index !== -1 ) {
+            const data = {
+                index   : index,
+                total   : props.price * quantity,
+                quantity: quantity
+            }
+            props.addQuantity( data )
         }
-        props.addItem( product )
+        else {
+            const product = {
+                name          : props.name,
+                price         : props.price,
+                imgProduct    : props.imgProduct,
+                miniImgProduct: props.miniImgProduct,
+                quantity      : quantity,
+                total         : quantity * props.price
+            }
+            props.addItem( product )
+        }
+
     }
+
+    const goToCart = () => history.push( '/e-shop/cart' )
+
 
     // All the props here are initially located in the productsTab.js (productsTab array) file and used by ProductsRouter.jsx file
     return(
-        <div className="bg-white w-full p-12 flex flex-wrap">
+        <div className="bg-white w-full p-12 flex flex-wrap relative">
             <div className="md:w-1/2 w-full mt-4 p-5">
                 <div className={`${ props.imgProduct } ${ imgClass }`} />
             </div>
@@ -58,7 +86,7 @@ const Details = ( props ) => {
                         type      = "number"
                         className = "w-24 h-12 border border-gray-300 shadow-sm text-center rounded-sm"
                         min       = "1"
-                        max       = "5"
+                        max       = "10"
                         value     = { quantity }
                         onChange  = { ( event ) => changeQuantity( event ) }
                         // disable default user key down
@@ -66,10 +94,18 @@ const Details = ( props ) => {
                     />
                     <button
                         className = { button }
-                        onClick   = { () => addToCart() }
+                        onClick   = { () => addToCart( props ) }
                     >
                         Add to cart
                     </button>
+                    { addOrViewCart &&
+                        <button
+                            className = { button }
+                            onClick   = { () => goToCart() }
+                        >
+                            View cart
+                        </button>
+                    }
                 </div>
 
                 <hr className="my-8" />
@@ -128,7 +164,8 @@ const mapStateToProps = ( state ) => {
 }
 
 const mapActionToProps = {
-    addItem: addItem
+    addItem    : addItem,
+    addQuantity: addQuantity
 }
 
 export default connect( mapStateToProps, mapActionToProps )( Details )

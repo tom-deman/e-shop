@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import cart                from './firstReducer'
-import price               from './firstReducer'
+import cart                from './cartReducer'
+import price               from './cartReducer'
 
 const reducer = combineReducers({ cart, price })
 

@@ -20,14 +20,22 @@ const GridShop = () => 
                     className = "md:w-1/2 w-full"
                     to        = { element.leftPath }
                 >
-                    <div className={ `${ element.left } ${ imgClass } ${ animation } ${ element.leftAnimate }` } />
+                    <div className={ `${ element.left } ${ imgClass } ${ animation } ${ element.leftAnimate } flex items-end justify-center` }>
+                        <p className = "hidden font-medium text-sm tracking-wide pb-4">
+                            { element.leftName }
+                        </p>
+                    </div>
                 </Link>
 
                 <Link
                     className = "md:w-1/2 w-full"
                     to        = { element.rightPath }
                 >
-                    <div className={ `${ element.right } ${ imgClass } ${ animation } ${ element.rightAnimate }` } />
+                    <div className={ `${ element.right } ${ imgClass } ${ animation } ${ element.rightAnimate } flex items-end justify-center` }>
+                        <p className="hidden font-medium text-sm tracking-wide pb-4">
+                            { element.rightName}
+                        </p>
+                    </div>
                 </Link>
             </div>
         )}

@@ -83,41 +83,51 @@ export const productsTabShop = [
         left        : 'product-1',
         leftPath    : '/e-shop/product-1',
         leftAnimate : 'delay-1',
+        leftName    : 'Kettle',
         right       : 'product-2',
         rightPath   : '/e-shop/product-2',
-        rightAnimate: 'delay-2'
+        rightAnimate: 'delay-2',
+        rightName   : 'Shoes'
     },
     {
         left        : 'product-3',
         leftPath    : '/e-shop/product-3',
         leftAnimate : 'delay-3',
+        leftName    : 'Headphones',
         right       : 'product-4',
         rightPath   : '/e-shop/product-4',
-        rightAnimate: 'delay-4'
+        rightAnimate: 'delay-4',
+        rightName   : 'Cup'
     },
     {
         left        : 'product-5',
         leftPath    : '/e-shop/product-5',
         leftAnimate : 'delay-5',
+        leftName    : 'Gold Watch',
         right       : 'product-6',
         rightPath   : '/e-shop/product-6',
-        rightAnimate: 'delay-6'
+        rightAnimate: 'delay-6',
+        rightName   : 'Speaker'
     },
     {
         left        : 'product-7',
         leftPath    : '/e-shop/product-7',
         leftAnimate : 'delay-7',
+        leftName    : 'White Watch',
         right       : 'product-8',
         rightPath   : '/e-shop/product-8',
-        rightAnimate: 'delay-8'
+        rightAnimate: 'delay-8',
+        rightName   : 'Phone'
     },
     {
         left        : 'product-9',
         leftPath    : '/e-shop/product-9',
         leftAnimate : 'delay-9',
+        leftName    : 'Camera',
         right       : 'product-10',
         rightPath   : '/e-shop/product-10',
-        rightAnimate: 'delay-10'
+        rightAnimate: 'delay-10',
+        rightName   : 'Chair'
     }
 ]
 

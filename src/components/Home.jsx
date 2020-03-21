@@ -17,10 +17,10 @@ import { animation, imgClass } from '../assets/js/variables'
 
 const Home = () => {
     // this count is used to display or not the button with anchor link to the top of the page
-    const [count, setCount] = useState( false )
+    const [ count, setCount ] = useState( false )
 
     // Detecting if the scroll is bigger than 750 with the DOM ? true : false
-    useEffect(() => {
+    useEffect( () => {
         const home = document.querySelector( '#home' )
         home.addEventListener( 'scroll', () => {
             const isActive = home.scrollTop > 750
